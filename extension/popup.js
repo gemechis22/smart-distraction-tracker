@@ -1,21 +1,18 @@
-document.getElementById("start").addEventListener("click", () => {
-  document.getElementById("status").innerText = "Tracking started!";
-  const startTime = new Date();
-  setInterval(() => {
-    const now = new Date();
-    const elapsed = new Date(now - startTime);
-    const hours = String(elapsed.getUTCHours()).padStart(2, '0');
-    const minutes = String(elapsed.getUTCMinutes()).padStart(2, '0');
-    const seconds = String(elapsed.getUTCSeconds()).padStart(2, '0');
-    document.getElementById("time").innerText = `${hours}:${minutes}:${seconds}`;
-  }, 1000);
-});
-document.getElementById("stop").addEventListener("click", () => { 
-  document.getElementById("status").innerText = "Tracking stopped!";
-} );
+document.addEventListener("DOMContentLoaded", () => {
+  const startButton = document.getElementById("start");
+  const resetButton = document.getElementById("reset");
+  const statusText = document.getElementById("status");
 
-document.getElementById("reset").addEventListener("click", () => {
-  document.getElementById("status").innerText = "Tracking reset!";
-  document.getElementById("time").innerText = "00:00:00";
-} );
-document.getElementById("time").innerText = "00:00:00";   
+  startButton.addEventListener("click", () => {
+    statusText.innerText = " Tracking started!";
+  });
+
+  resetButton.addEventListener("click", () => {
+    statusText.innerHTML = " Tracking reset.";
+  });
+  statusText.style.color = "green";
+
+  setTimeout(() => {
+    statusText.style.opacity = "0";
+  }, 5000);
+});
