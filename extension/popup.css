@@ -2,49 +2,31 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   padding: 20px;
+  width: 250px;
 }
 
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.buttons {
+  margin-bottom: 15px;
+}
 button {
   padding: 10px 20px;
   font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 #status {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #555;
-}
-#status.error {
-  color: red;
-}
-#status.success {
-  color: green;
-}
- #status.loading {
-  color: blue;
-}
-#status.loading::before {
-  content: "Loading... ";
-  animation: spin 1s linear infinite;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-#status.hidden {
+ font-style: italic;
+  color: #666;
+  margin-top: 10px;
   display: none;
-}
-#status.visible {
-  display: block;
-}
-#status.hidden::before {
-  content: "";
-}
-#status.visible::before {
-  content: "Status: ";
-}
-#status.hidden::after {
-  content: "";
-}
-#status.visible::after {
-  content: "Click the button to start.";
 }
