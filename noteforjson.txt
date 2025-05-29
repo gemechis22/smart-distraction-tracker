@@ -1,0 +1,13 @@
+//host_permissions allows the extension to access all websites.
+// This is necessary for tracking time spent on different sites.
+// The extension will not track user input or sensitive data, only the time spent on each site.
+// The extension will use the Chrome Storage API to store the time spent on each site.
+// The extension will also use the Chrome Tabs API to detect when a tab is active or inactive.
+// The extension will not collect any personal data or track user behavior.
+// The extension will only track the time spent on each site and store it in the Chrome Storage API.
+// The extension will provide a popup interface to view the time spent on each site.
+// The extension will not interfere with the user's browsing experience.
+// The extension will be lightweight and efficient, minimizing its impact on browser performance.
+// The extension will be open source and available for anyone to use and contribute to.
+// The extension will be regularly updated to fix bugs and add new features.
+// The extension will be tested on multiple browsers to ensure compatibility.
