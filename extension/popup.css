@@ -34,4 +34,6 @@ button:hover {
 #status {
   font-style: italic;
   color: gray;
+  opacity: 1;
+  transition: opacity 1s ease-out;
 }
