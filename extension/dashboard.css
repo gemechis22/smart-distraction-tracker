@@ -27,8 +27,21 @@ li {
     color: #333;
 }
 
-.chart-container {
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
+.progress-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  height: 25px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #007bff;
+  width: 0%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  transition: width 0.5s ease-in-out;
 }

@@ -60,3 +60,15 @@ if (chartData.length > 0) {
         }
     });
 }
+
+// Calculate total time
+const totalSeconds = chartData.reduce((acc, val) => acc + val, 0);
+document.getElementById("totalTime").innerText = `Total Time: ${formatTime(totalSeconds)}`;
+
+// Calculate progress toward daily limit (let's say 2 hours = 7200 seconds)
+const dailyLimit = 7200;
+const percentage = Math.min((totalSeconds / dailyLimit) * 100, 100).toFixed(1);
+const progressBar = document.getElementById("progressBar");
+
+progressBar.style.width = `${percentage}%`;
+progressBar.innerText = `${percentage}%`;

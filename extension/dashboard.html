@@ -7,11 +7,18 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h1>Today's Tracked Time</h1>
-    <ul id="siteList"></ul>
-    <div style="width: 60%; margin: 0 auto;">
-        <canvas id="timeChart"></canvas>
-    </div>
-    <script src="dashboard.js"></script>
+  <h1>Today's Tracked Time</h1>
+  <h2 id="totalTime"></h2>
+
+  <div class="progress-container">
+    <div id="progressBar" class="progress-bar"></div>
+  </div>
+
+  <ul id="siteList"></ul>
+  <canvas id="timeChart" width="400" height="400"></canvas>
+
+  <script src="chart.min.js"></script>
+  <script src="dashboard.js"></script>
 </body>
+
 </html>
