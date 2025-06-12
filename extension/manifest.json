@@ -1,12 +1,12 @@
 {
-  "manifest_version": 3,
-  "name": "Smart Distraction Tracker",
-  "version": "1.0",
-  "description": "Track time spent on websites and stay focused.",
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": "icon.png"
-  },
-  "permissions": ["storage", "tabs", "notifications"],
-    "host_permissions": ["https://www.youtube.com/", "https://*/"]
+    "manifest_version": 3,
+    "name": "Smart Distraction Tracker",
+    "version": "1.0",
+    "description": "Track time spent on websites and stay focused.",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "permissions": ["storage", "tabs"],
+    "host_permissions": ["<all_urls>"]
 }
