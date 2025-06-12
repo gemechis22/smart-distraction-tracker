@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const tab = tabs[0];
     const url = new URL(tab.url);
     const domain = url.hostname;
-
     const today = new Date().toDateString();
     const storedData = JSON.parse(localStorage.getItem(domain));
 
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (storedData && storedData.date === today) {
       trackedTime = storedData.time;
     } else {
-      // Reset if the date changed or no data exists
       localStorage.setItem(domain, JSON.stringify({ time: 0, date: today }));
     }
 
@@ -27,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return `${mins}m ${secs < 10 ? '0' : ''}${secs}s`;
     }
 
-    // Initial display
     statusText.innerText = ` ${domain}: ${formatTime(trackedTime)}`;
 
     startButton.addEventListener("click", () => {
@@ -37,6 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
         trackedTime++;
         localStorage.setItem(domain, JSON.stringify({ time: trackedTime, date: today }));
         statusText.innerText = ` ${domain}: ${formatTime(trackedTime)}`;
+
+        const dailyLimit = 7200;
+        if (trackedTime === dailyLimit) {
+          chrome.notifications.create({
+            type: "basic",
+            iconUrl: "icon.png",
+            title: "Daily Limit Reached",
+            message: `You've reached your daily 2-hour limit on ${domain}!`,
+            priority: 2
+          });
+        }
       }, 1000);
     });
 
